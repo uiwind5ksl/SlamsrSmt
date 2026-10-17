@@ -31,6 +31,8 @@ wss.on('connection', (ws) => {
       rooms.get(jobid).add(ws);
     }
 
+    console.log("Mensagem recebida:", data);
+
     if (jobid && rooms.has(jobid)) {
       const room = rooms.get(jobid);
       const payload = JSON.stringify(data);
